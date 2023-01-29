@@ -1,7 +1,11 @@
+import { useHistory } from 'react-router-dom';
+
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 
 const NewMeetupPage = () => {
+    const history = useHistory();
+
     const addMeetupHandler = (meetupData) => {
         fetch('database_url/meetups.json', {
             method: 'POST',
@@ -9,6 +13,8 @@ const NewMeetupPage = () => {
             headers: {
                 'Content-Type': 'application/json'
             }
+        }).then(() => {
+            history.replace('/')
         });
     }
 
