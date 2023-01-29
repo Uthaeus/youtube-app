@@ -3,7 +3,13 @@ import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 const NewMeetupPage = () => {
     const addMeetupHandler = (meetupData) => {
-        
+        fetch('database_url/meetups.json', {
+            method: 'POST',
+            body: JSON.stringify(meetupData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
     }
 
     return (
