@@ -47,14 +47,6 @@ const AllMeetupsPage = () => {
         });
     }, []);
 
-    fetch('database_url/meetups.json'
-    ).then(response => {
-        return response.json();
-    }).then(data => {
-        setIsLoading(false);
-        setLoadedMeetups(data);
-    });
-
     if (isLoading) {
         return (
             <section>
