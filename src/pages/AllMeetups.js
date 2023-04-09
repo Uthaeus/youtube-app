@@ -44,6 +44,8 @@ const AllMeetupsPage = () => {
             }
             setIsLoading(false);
             setLoadedMeetups(meetups);
+        }).catch(error => {
+            console.log('allmeetups.js', error);
         });
     }, []);
 

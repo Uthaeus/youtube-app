@@ -1,10 +1,10 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 
 const NewMeetupPage = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const addMeetupHandler = (meetupData) => {
         fetch('database_url/meetups.json', {
@@ -14,7 +14,7 @@ const NewMeetupPage = () => {
                 'Content-Type': 'application/json'
             }
         }).then(() => {
-            history.replace('/')
+            navigate('/');
         });
     }
 
